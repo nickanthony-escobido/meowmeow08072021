@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Christmas';
+    src: url(../font/Playful\ Christmas.otf);
+}
+
+* { 
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    max-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+.content {
+    position: relative;
+    top: 300px;
+    flex-direction: column;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    font-family: 'Christmas', sans-serif;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 36px;
+    font-size: 30px;
+    color: #ffffff;
+    background: 3px solid rgba(255, 255, 255, .2);
+    border-radius: 18px;
+    transition: .4s;
+    background-color: rgba(255, 255, 255, 0.199);
+    vertical-align: middle;
+
+}
+
+.btn:hover {
+    z-index: 1;
+    border-color: transparent;
+    background: linear-gradient(
+        90deg,
+        #ff0000,
+        #f5018f,
+        #ee0202,
+        #ff49c2,
+        #ff6666,
+        #ff0000
+    );
+    background-size: 400%;
+    box-shadow: 0 0 15px; 
+    animation: glow 12s linear forwards;
+}
+
+@keyframes glow {
+
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 400%;
+    }
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background: inherit;
+    filter: blur(36px);
+    opacity: 0;
+    transition: .4s ease-out;
+}
+
+.btn:hover::before{
+    opacity: 1;
+    z-index: -1;
+}
